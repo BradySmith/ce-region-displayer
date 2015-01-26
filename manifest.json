@@ -1,0 +1,27 @@
+{
+  "name": "Server Region Quick Display",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description" : "If the servers sends a 'region' object in the return header, this extension displays it in the badge",
+
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/19x19.png",
+      "38": "icons/38x38.png"
+    }
+  },
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+
+}
